@@ -30,6 +30,7 @@ Route::prefix('/admin')
 
     Route::middleware(['admin'])->group(function() {
       Route::get('dashboard', 'AdminController@dashboard')->name('dashboard');
+      Route::get('logout', 'AdminController@logout')->name('logout');
     });
 
   });
