@@ -19,6 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/credimax', 'CredimaxController@index')->name('credimax');
+Route::get('/checkout', 'CredimaxController@checkout')->name('checkout');
+
 Route::prefix('/admin')
   ->namespace('Admin')
   ->name('admin.')
