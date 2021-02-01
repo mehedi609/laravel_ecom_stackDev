@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="{{ url('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ url('css/admin_css/adminlte.min.css') }}">
+    <!-- toastr -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   </head>
@@ -29,6 +31,7 @@
           <p class="login-box-msg">Sign in to start your session</p>
 
           @if (Session::has('error_message'))
+            {!! Toastr::warning('', 'asdfasdfasdf') !!}
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
               {{ Session::get('error_message') }}
               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -97,6 +100,8 @@
     <script src="{{ url('plugins/jquery/jquery.min.js') }}"></script>
     <!-- Bootstrap 4 -->
     <script src="{{ url('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+    {!! Toastr::message() !!}
     <!-- AdminLTE App -->
     <script src="{{ url('js/admin_js/adminlte.min.js') }}"></script>
 

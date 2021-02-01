@@ -1,6 +1,10 @@
 @extends('layouts.admin_layout.admin_layout')
 
 @section('content')
+  @if (Session::has('success_message'))
+    {!! Toastr::success('', Session::get('success_message')) !!}
+  @endif
+
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -11,7 +15,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
               <li class="breadcrumb-item active">Dashboard v1</li>
             </ol>
           </div><!-- /.col -->

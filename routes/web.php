@@ -31,6 +31,11 @@ Route::prefix('/admin')
     Route::middleware(['admin'])->group(function() {
       Route::get('dashboard', 'AdminController@dashboard')->name('dashboard');
       Route::get('logout', 'AdminController@logout')->name('logout');
+      Route::get('settings', 'AdminController@settings')->name('settings');
+      Route::post('check-current-password', 'AdminController@check_current_password')->name('check_current_password');
+      Route::post('update-current-password', 'AdminController@update_password')->name('update_current_password');
+      Route::get('update-admin-details', 'AdminController@update_admin_details')->name('view_update_admin_details');
+      Route::post('update-admin-details', 'AdminController@update_admin_details')->name('update_admin_details');
     });
 
   });
